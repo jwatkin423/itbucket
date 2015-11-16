@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<title>IT Bucket</title>
-		<link href="/public/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
-		<script src="/public/bootstrap/js/jquery.js"></script>
-		<script src="/public/bootstrap/js/bootstrap.js"></script>
+		<link href="<?php echo site_url('/public/bootstrap/css/bootstrap-theme.css'); ?>" rel="stylesheet">
+		<script src="<?php echo site_url('/public/bootstrap/js/jquery.js'); ?>"></script>
+		<script src="<?php echo site_url('/public/bootstrap/js/bootstrap.js'); ?>"></script>
 		<style type="text/css">
 		</style>
 	</head>
@@ -18,7 +18,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/">IT_Bucket</a>
+			<a class="navbar-brand" href="<?php echo site_url(); ?>">IT_Bucket</a>
 		</div>
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">

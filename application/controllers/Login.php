@@ -5,7 +5,6 @@ class Login extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
-
 	}
 
 	public function index() {
@@ -23,12 +22,12 @@ class Login extends CI_Controller {
 		$this->form_validation->set_rules('password', 'password', 'required|trim');
 
 		if ($this->form_validation->run()) {
-			$this->load->model('Profile_model');
-			$profile = $this->profile_model->getProfileInfo($this->input->post('email'));
-			$data['profile'] = $profile;
-			$this->load->view('home/header');
-			$this->load->view('admin/index.php', $data);
-			$this->load->view('home/footer');
+			$this->load->model('profile_model');
+			$email = $this->input->post('email');
+			$profile = $this->profile_model->getProfileLogin($email);
+			$profile['is_logged_in'] = 1;
+			$this->session->set_userdata($profile);
+			redirect('members/index');
 		} else {
 			$this->load->view('home/header');
 			$this->load->view('login/index');
@@ -38,7 +37,7 @@ class Login extends CI_Controller {
 
 	public function oauth() {
 		$this->load->model('login_model');
-		if ($this->login_model->oauth()) {
+		if ($this->login_model->login()) {
 			return true;
 		} else {
 			$this->form_validation->set_message('oauth', 'Incorrent username/password.');

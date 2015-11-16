@@ -10,8 +10,10 @@
 </div>
 <div class="row client-panel">
 <div class="col-md-10">
-<div class="alert alert-success" id="client_successful" role="alert">Changes were successfull <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
-<div class="alert alert-danger" id="client_unsuccessful" role="alert">Changes were not made, please check the data <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+<div class="alert add-edit-client" id="client_successful">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<div class="inner"></div>
+</div>
 <div class="panel panel-info">
 	<div class="panel-heading">
 		<h3 class="panel-title">Clients</h3>
